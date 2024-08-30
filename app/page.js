@@ -30,7 +30,6 @@ export default async function Home() {
     <>
       <Hero datas={data?.slider_banners} />
       <Categories datas={data?.categories} />
-      <GiftCards datas={data?.category_one} />
       <BestSellingProduct datas={data?.trending} />
       <SliderProducts
         datas={data?.category_three}
@@ -39,6 +38,7 @@ export default async function Home() {
         url={`/products?category=${data?.category_three?.category?.slug}`}
         className="bg-black pb-[60px]"
       />
+      <GiftCards datas={data?.category_one} />
       <SliderProducts
         datas={data?.category_four}
         title={data?.category_four?.category?.name}

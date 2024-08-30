@@ -29,7 +29,7 @@ function Sidebar({
 }) {
   return (
     <div
-      className={`lg:relative lg:h-auto h-screen overflow-y-scroll lg:overflow-y-auto fixed left-0 top-0 z-[99999999999]  w-full ${
+      className={`lg:relative lg:h-auto h-screen overflow-y-scroll lg:overflow-y-auto fixed left-0 top-0 lg:z-[99999999999]  w-full ${
         sideBarAction.filterToogle ? "block" : "lg:block hidden"
       }`}
     >
@@ -114,7 +114,7 @@ function Sidebar({
               <button
                 onClick={() => rating.handler(1)}
                 type="button"
-                className="w-full flex space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
+                className="w-full flex rtl:space-x-reverse space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
               >
                 <div
                   className={`w-[22px] h-[22px] rounded-sm  group-hover:bg-primary-blue common-transition ${
@@ -123,7 +123,7 @@ function Sidebar({
                       : "bg-[#0B0E12]"
                   }`}
                 ></div>
-                <div className="flex space-x-1.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1.5 items-center">
                   <span>
                     <svg
                       width="23"
@@ -145,7 +145,7 @@ function Sidebar({
               <button
                 onClick={() => rating.handler(2)}
                 type="button"
-                className="w-full flex space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
+                className="w-full flex rtl:space-x-reverse space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
               >
                 <div
                   className={`w-[22px] h-[22px] rounded-sm  group-hover:bg-primary-blue common-transition ${
@@ -154,7 +154,7 @@ function Sidebar({
                       : "bg-[#0B0E12]"
                   }`}
                 ></div>
-                <div className="flex space-x-1.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1.5 items-center">
                   <span>
                     <svg
                       width="23"
@@ -190,7 +190,7 @@ function Sidebar({
               <button
                 onClick={() => rating.handler(3)}
                 type="button"
-                className="w-full flex space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
+                className="w-full flex rtl:space-x-reverse space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
               >
                 <div
                   className={`w-[22px] h-[22px] rounded-sm  group-hover:bg-primary-blue common-transition ${
@@ -199,7 +199,7 @@ function Sidebar({
                       : "bg-[#0B0E12]"
                   }`}
                 ></div>
-                <div className="flex space-x-1.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1.5 items-center">
                   <span>
                     <svg
                       width="23"
@@ -249,7 +249,7 @@ function Sidebar({
               <button
                 onClick={() => rating.handler(4)}
                 type="button"
-                className="w-full flex space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
+                className="w-full flex rtl:space-x-reverse space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
               >
                 <div
                   className={`w-[22px] h-[22px] rounded-sm  group-hover:bg-primary-blue common-transition ${
@@ -258,7 +258,7 @@ function Sidebar({
                       : "bg-[#0B0E12]"
                   }`}
                 ></div>
-                <div className="flex space-x-1.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1.5 items-center">
                   <span>
                     <svg
                       width="23"
@@ -322,7 +322,7 @@ function Sidebar({
               <button
                 onClick={() => rating.handler(5)}
                 type="button"
-                className="w-full flex space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
+                className="w-full flex rtl:space-x-reverse space-x-4 items-center text-base group leading-[35px] hover:text-primary-blue mb-1"
               >
                 <div
                   className={`w-[22px] h-[22px] rounded-sm  group-hover:bg-primary-blue common-transition ${
@@ -331,7 +331,7 @@ function Sidebar({
                       : "bg-[#0B0E12]"
                   }`}
                 ></div>
-                <div className="flex space-x-1.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1.5 items-center">
                   <span>
                     <svg
                       width="23"
@@ -417,7 +417,7 @@ function Sidebar({
             <StringLang string="Clear all" />
           </button>
           <button onClick={searchAction} type="button">
-            <div className="lg:py-4 lg:px-8 py-3 px-5 flex space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
+            <div className="lg:py-4 lg:px-8 py-3 px-5 flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
               <span className="text-black text-base font-medium leading-5">
                 <StringLang string="Search" />
               </span>
@@ -535,7 +535,7 @@ function Index({ categories, max_price, searchKey }) {
     <div className="w-full">
       <div className="theme-container mx-auto">
         <div className="w-full">
-          <div className="w-full lg:flex lg:space-x-[30px]">
+          <div className="w-full lg:flex lg:rtl:space-x-reverse space-x-[30px]">
             <div className="lg:w-[270px] w-full">
               <Sidebar
                 sideBarAction={{ filterToogle, handler: setFilterToogle }}
@@ -551,13 +551,13 @@ function Index({ categories, max_price, searchKey }) {
             </div>
             <div className="flex-1">
               <div className="flex justify-end mb-8">
-                <div className="flex space-x-5">
+                <div className="flex rtl:space-x-reverse space-x-5">
                   <button
                     onClick={() => setFilterToogle(true)}
                     type="button"
                     className="lg:hidden block"
                   >
-                    <div className="defaultBox flex space-x-7 items-center rounded py-2.5 px-[14px]">
+                    <div className="defaultBox flex rtl:space-x-reverse space-x-7 items-center rounded py-2.5 px-[14px]">
                       <span className="text-sm leading-[21px] text-white">
                         <StringLang string="Filters" />
                       </span>
@@ -589,13 +589,13 @@ function Index({ categories, max_price, searchKey }) {
                       </span>
                     </div>
                   </button>
-                  <div className="flex space-x-3 items-center">
+                  <div className="flex rtl:space-x-reverse space-x-3 items-center">
                     <span className="text-base leading-6 text-white sm:block hidden">
                       <StringLang string="Sort By" />:
                     </span>
                     <DropDown action={sortingHandler} datas={sortByOption}>
                       {({ item }) => (
-                        <div className="defaultBox flex space-x-7 items-center rounded py-2.5 px-[14px]">
+                        <div className="defaultBox flex rtl:space-x-reverse space-x-7 items-center rounded py-2.5 px-[14px]">
                           <span className="text-sm leading-[21px] text-white">
                             {item?.name}
                           </span>

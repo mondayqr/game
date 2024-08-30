@@ -56,8 +56,8 @@ async function page(ctx) {
                 />
               </div>
               {/* quick details */}
-              <div className="w-full flex sm:space-x-[46px] space-x-3 items-center mb-[22px]">
-                <div className="flex  space-x-2.5 items-center">
+              <div className="w-full flex sm:rtl:space-x-reverse space-x-[46px] rtl:space-x-reverse space-x-3 items-center mb-[22px]">
+                <div className="flex  rtl:space-x-reverse space-x-2.5 items-center">
                   <span>
                     <svg
                       width="13"
@@ -80,7 +80,7 @@ async function page(ctx) {
                     <StringLang string="By" /> {blog.admin.name}
                   </span>
                 </div>
-                <div className="flex  space-x-2.5 items-center">
+                <div className="flex  rtl:space-x-reverse space-x-2.5 items-center">
                   <span>
                     <svg
                       width="16"
@@ -133,7 +133,7 @@ async function page(ctx) {
                   </span>
                   <span className="text-sm">{DateFormat(blog.created_at)}</span>
                 </div>
-                <div className="flex  space-x-2.5 items-center">
+                <div className="flex  rtl:space-x-reverse space-x-2.5 items-center">
                   <span>
                     <svg
                       width="16"
@@ -180,11 +180,11 @@ async function page(ctx) {
             </div>
             {/*  other features*/}
             <div className="md:flex justify-between items-center pt-[21px] border-t border-[#23262B] mt-[30px]">
-              <div className="flex space-x-[26px] items-center mb-2">
+              <div className="flex rtl:space-x-reverse space-x-[26px] items-center mb-2">
                 <span className="text-xl font-bold text-white">
                   <StringLang string="Tags" />:
                 </span>
-                <div className="flex flex-wrap space-x-6 items-center">
+                <div className="flex flex-wrap rtl:space-x-reverse space-x-6 items-center">
                   {blog_tags &&
                     blog_tags.length > 0 &&
                     blog_tags.map((item, i) => (
@@ -197,11 +197,11 @@ async function page(ctx) {
                     ))}
                 </div>
               </div>
-              <div className="flex space-x-[26px] items-center">
+              <div className="flex rtl:space-x-reverse space-x-[26px] items-center">
                 <span className="text-xl font-bold text-white">
                   <StringLang string="Share" />:
                 </span>
-                <div className="flex space-x-2.5 items-center">
+                <div className="flex rtl:space-x-reverse space-x-2.5 items-center">
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${referer}&t=${blog.title}`}
                     target="_blank"

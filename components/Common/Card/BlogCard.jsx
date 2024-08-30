@@ -12,7 +12,7 @@ function BlogCard({ datas }) {
       className="w-full bg-black rounded-lg px-2 pt-2 group"
     >
       <div className="w-full h-[257px] relative mb-5">
-        <div className="inline-block px-4 py-[9px] rounded bg-[#0B0E12] absolute right-3 -bottom-4 z-10">
+        <div className="inline-block px-4 py-[9px] rounded bg-[#0B0E12] absolute ltr:right-3 ltr:left-auto rtl:left-3 rtl:right-auto -bottom-4 z-10">
           <span className="text-white text-base leading-none">
             {DateFormat(created_at)}
           </span>
@@ -39,7 +39,7 @@ function BlogCard({ datas }) {
           >
             <StringLang string="Read More" />
           </Link>
-          <div className="flex space-x-2 items-center">
+          <div className="flex rtl:space-x-reverse space-x-2 items-center">
             <div className="w-[32px] h-[32px] rounded-full overflow-hidden">
               <img
                 src={process.env.BASE_URL + admin.image}

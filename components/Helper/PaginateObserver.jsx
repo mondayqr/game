@@ -53,8 +53,8 @@ function PaginateObserver({
               }}
               type="button"
             >
-              <div className="py-4 px-8 flex space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
-                <div className="flex space-x-2 items-center">
+              <div className="py-4 px-8 flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
+                <div className="flex rtl:space-x-reverse space-x-2 items-center">
                   <span className="text-black text-base font-medium leading-5">
                     Show More ...
                   </span>

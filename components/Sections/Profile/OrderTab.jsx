@@ -51,7 +51,7 @@ function OrderTab() {
                     className="w-full group rounded overflow-hidden  p-2.5  border border-[#3C3E42] bg-[#0B0E12]"
                   >
                     <div className="grid md:grid-cols-2 grid-cols-1 gap-5 md:gap-0 md:items-center">
-                      <div className="w-full flex md:flex-row flex-col md:space-x-4 space-y-4 md:space-y-0 md:items-center ">
+                      <div className="w-full flex md:flex-row flex-col md:rtl:space-x-reverse space-x-4 space-y-4 md:space-y-0 md:items-center ">
                         <div className="md:w-[160px] w-full h-[130px] relative rounded overflow-hidden">
                           <img
                             src={process.env.BASE_URL + item.variant_image}
@@ -62,15 +62,15 @@ function OrderTab() {
                         <div className="flex-1">
                           <div className="w-full md:pr-[14px]">
                             {/*price*/}
-                            <div className="flex space-x-2.5 items-center mb-1.5">
-                              <span className="text-lg leading-5 font-semibold text-primary-blue">
+                            <div className="flex rtl:space-x-reverse space-x-2.5 items-center mb-1.5">
+                              <span className="text-lg leading-5 font-semibold text-primary-blue notranslate">
                                 {calculatePrice(Number(item?.option_price))}
                               </span>
                             </div>
-                            <h1 className="text-[22px] text-white leading-[26px] font-medium line-clamp-1 mb-1">
+                            <h1 className="text-[22px] text-white leading-[26px] font-medium line-clamp-1 mb-1 notranslate">
                               {item?.variant_name}
                             </h1>
-                            <p className="text-primary-blue text-base">
+                            <p className="text-primary-blue text-base notranslate">
                               #{item?.order_id}
                             </p>
                           </div>
@@ -78,7 +78,7 @@ function OrderTab() {
                       </div>
                       <div className="w-full flex md:justify-end">
                         <div>
-                          <div className="flex space-x-2.5 items-center">
+                          <div className="flex rtl:space-x-reverse space-x-2.5 items-center">
                             {item?.has_review === "no" &&
                             item?.approve_by_user == "approved" ? (
                               <button
@@ -120,7 +120,7 @@ function OrderTab() {
       )}
       {orderViewType !== "list" && orderViewType?.id && (
         <>
-          <div className="w-full mb-[18px] flex space-x-2.5 items-center">
+          <div className="w-full mb-[18px] flex rtl:space-x-reverse space-x-2.5 items-center">
             <button onClick={() => setOrderViewType("list")} type="button">
               <svg
                 width="34"
@@ -128,6 +128,7 @@ function OrderTab() {
                 viewBox="0 0 34 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="rtl:rotate-180"
               >
                 <circle cx="17" cy="17" r="17" fill="#E7F0FD" />
                 <g clipPath="url(#clip0_5833_4704)">
@@ -152,7 +153,7 @@ function OrderTab() {
               <StringLang string="Order Message" />
             </p>
           </div>
-          <div className="w-full flex xl:flex-row flex-col-reverse xl:space-x-[30px]">
+          <div className="w-full flex xl:flex-row flex-col-reverse xl:rtl:space-x-reverse space-x-[30px]">
             <div className="flex-1">
               <div className="flex flex-col space-y-[20px]">
                 <OrderChatBoard
@@ -182,8 +183,8 @@ function OrderTab() {
                     <div className="flex-1">
                       <div className="w-full ">
                         {/*price*/}
-                        <div className="flex space-x-2.5 items-center mb-1.5">
-                          <span className="text-lg leading-5 font-semibold text-primary-blue">
+                        <div className="flex rtl:space-x-reverse space-x-2.5 items-center mb-1.5">
+                          <span className="text-lg leading-5 font-semibold text-primary-blue notranslate">
                             {calculatePrice(
                               Number(orderViewType?.option_price)
                             )}
@@ -211,7 +212,7 @@ function OrderTab() {
                                 },
                               });
                             }}
-                            className="py-4 px-8 w-full flex space-x-2.5 justify-center items-center bg-primary-blue hover:bg-white common-transition rounded-[5px] mt-5 cursor-pointer"
+                            className="py-4 px-8 w-full flex rtl:space-x-reverse space-x-2.5 justify-center items-center bg-primary-blue hover:bg-white common-transition rounded-[5px] mt-5 cursor-pointer"
                           >
                             <span className="text-black text-base font-medium leading-5 text-center">
                               Approve Order

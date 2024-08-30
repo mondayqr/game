@@ -20,7 +20,7 @@ function BankPayment({ paymentInfo, submitAction }) {
               <StringLang string={"Your transaction information"} />
             </p>
             <div className="input-field h-[120px] relative">
-              <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center">
+              <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center">
                 Bank Details*
               </label>
               <textArea

@@ -55,7 +55,7 @@ function ProductCard(props) {
           props.className || "bg-[#0B0E12]"
         } border border-[#3C3E42]`}
       >
-        <div className="w-full  p-2.5 flex space-x-4 items-center ">
+        <div className="w-full  p-2.5 flex rtl:space-x-reverse space-x-4 items-center ">
           <div className="w-[160px] h-[126px] relative rounded overflow-hidden">
             <img
               src={process.env.BASE_URL + thumbnail_image}
@@ -113,14 +113,14 @@ function ProductCard(props) {
           <div className="flex-1">
             <div className="w-full pr-[14px]">
               {/*price*/}
-              <div className="flex space-x-2.5 items-center mb-1.5">
-                <span className="sm:text-xl text-lg leading-5 font-bold text-primary-blue">
+              <div className="flex rtl:space-x-reverse space-x-2.5 items-center mb-1.5">
+                <span className="sm:text-xl text-lg leading-5 font-bold text-primary-blue notranslate">
                   {offer_price
                     ? calculatePrice(Number(offer_price))
                     : calculatePrice(Number(regular_price))}
                 </span>
                 {offer_price && parseInt(offer_price) > 0 ? (
-                  <span className="sm:text-sm text-xs leading-4 line-through text-[#7B7B7B]">
+                  <span className="sm:text-sm text-xs leading-4 line-through text-[#7B7B7B] notranslate">
                     {calculatePrice(Number(regular_price))}
                   </span>
                 ) : (
@@ -128,7 +128,7 @@ function ProductCard(props) {
                 )}
               </div>
               <Link href={`/products/${slug}`}>
-                <h1 className="sm:text-xl text-lg text-white sm:leading-[24px] font-medium line-clamp-1 mb-4 font-semibold">
+                <h1 className="sm:text-xl text-lg text-white sm:leading-[24px] line-clamp-1 mb-4 font-semibold notranslate">
                   {name}
                 </h1>
               </Link>
@@ -138,7 +138,7 @@ function ProductCard(props) {
                     {total_sale + ` ${language["Sale"]}`}
                   </span>
                 </div>
-                <div className="flex space-x-1 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1 items-center">
                   <span>
                     <svg
                       width="21"
@@ -230,14 +230,14 @@ function ProductCard(props) {
           <div className="flex-1">
             <div className="w-full px-2 pb-5">
               {/*price*/}
-              <div className="flex space-x-2.5 items-center mb-1.5">
-                <span className="sm:text-xl text-lg leading-6 font-bold text-primary-blue">
+              <div className="flex rtl:space-x-reverse space-x-2.5 items-center mb-1.5">
+                <span className="sm:text-xl text-lg leading-6 font-bold text-primary-blue notranslate">
                   {offer_price
                     ? calculatePrice(offer_price)
                     : calculatePrice(regular_price)}
                 </span>
                 {offer_price && parseInt(offer_price) > 0 ? (
-                  <span className="sm:text-sm text-xs leading-4 line-through text-[#7B7B7B]">
+                  <span className="sm:text-sm text-xs leading-4 line-through text-[#7B7B7B] notranslate">
                     {calculatePrice(regular_price)}
                   </span>
                 ) : (
@@ -245,7 +245,7 @@ function ProductCard(props) {
                 )}
               </div>
               <Link href={`/products/${slug}`}>
-                <h1 className="sm:text-xl text-lg text-white sm:leading-6 font-semibold line-clamp-1 mb-4">
+                <h1 className="sm:text-xl text-lg text-white sm:leading-6 font-semibold line-clamp-1 mb-4 notranslate">
                   {name}
                 </h1>
               </Link>
@@ -255,7 +255,7 @@ function ProductCard(props) {
                     {total_sale + ` ${language["Sale"]}`}
                   </span>
                 </div>
-                <div className="flex space-x-1 items-center">
+                <div className="flex rtl:space-x-reverse space-x-1 items-center">
                   <span>
                     <svg
                       width="18"

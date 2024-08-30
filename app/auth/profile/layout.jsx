@@ -78,7 +78,7 @@ function Layout({ children }) {
                 </div>
 
                 <div className="flex justify-center">
-                  <div className="flex space-x-5 items-center">
+                  <div className="flex rtl:space-x-reverse space-x-5 items-center">
                     <button
                       onClick={() => setToggleModal(false)}
                       type="button"
@@ -110,7 +110,7 @@ function Layout({ children }) {
       <div className="w-full py-[60px]">
         <div className="theme-container mx-auto">
           <div className="w-full">
-            <div className="w-full lg:flex lg:space-x-[30px]">
+            <div className="w-full lg:flex lg:rtl:space-x-reverse space-x-[30px]">
               <div className="lg:w-[270px] mb-6 lg:mb-0 ">
                 <div className="w-full rounded-[5px] border border-primary-border">
                   <div className="pt-5">
@@ -124,7 +124,7 @@ function Layout({ children }) {
                         <a
                           href={process.env.BASE_URL + "seller/login"}
                           target="_blank"
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             selectedTab === "seller"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"
@@ -177,7 +177,7 @@ function Layout({ children }) {
                         <Link
                           href="/auth/profile"
                           type="button"
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             lastPath === "profile"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"
@@ -218,7 +218,7 @@ function Layout({ children }) {
                         <Link
                           href="/auth/profile/order"
                           type="button"
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             lastPath === "order"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"
@@ -263,7 +263,7 @@ function Layout({ children }) {
                         <Link
                           href="/auth/profile/favorites"
                           type="button"
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             lastPath === "favorites"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"
@@ -302,7 +302,7 @@ function Layout({ children }) {
                         <Link
                           href="security"
                           type="button"
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             selectedTab === "security"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"
@@ -342,7 +342,7 @@ function Layout({ children }) {
                           type="button"
                           disabled={isLoading}
                           onClick={() => setToggleModal(true)}
-                          className={`flex space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
+                          className={`flex rtl:space-x-reverse space-x-2.5 items-center py-[14px] px-[18px] first:pt-0  border-b  common-transition w-full last:border-none group ${
                             selectedTab === "logout"
                               ? "border-primary-blue"
                               : "border-[#23262B] hover:border-primary-blue"

@@ -49,7 +49,7 @@ async function Page() {
                     className="mb-[30px]"
                   ></div>
                 </div>
-                <div className="flex space-x-6 items-center mt-[30px]">
+                <div className="flex rtl:space-x-reverse space-x-6 items-center mt-[30px]">
                   <div
                     style={{
                       boxShadow: "0px 0px 25px 0px rgba(0, 0, 0, 0.15)",

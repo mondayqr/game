@@ -48,10 +48,19 @@
 }
 .my-select-box .my-select-box-section.left {
   left: 0;
+  right: auto;
+}
+[dir="rtl"] .my-select-box .my-select-box-section.left {
+  left: auto;
+  right: 0;
 }
 .my-select-box .my-select-box-section.right {
   left: auto;
   right: 0;
+}
+[dir="rtl"] .my-select-box .my-select-box-section.right {
+  right: auto;
+  left: 0;
 }
 .my-select-box .my-select-box-section.open {
   opacity: 1;
@@ -76,6 +85,9 @@
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   color: white;
+}
+[dir="rtl"] .my-select-box .my-select-box-section li {
+  text-align: right;
 }
 .my-select-box .my-select-box-section li:hover {
   background-color: #23262b;

@@ -41,7 +41,7 @@ function BestSellingProduct({ datas }) {
               {datas?.categories &&
                 datas?.categories &&
                 datas?.categories.length > 0 && (
-                  <div className="lg:flex hidden space-x-[14px] items-center">
+                  <div className="lg:flex hidden rtl:space-x-reverse space-x-[14px] items-center">
                     {datas?.categories
                       .slice(
                         0,
@@ -56,7 +56,7 @@ function BestSellingProduct({ datas }) {
                           type="button"
                         >
                           <div
-                            className={`lg:py-4 lg:px-[25px] py-3 px-5 flex space-x-2.5 items-center  hover:text-black hover:bg-primary-blue common-transition rounded-[5px] border hover:border-transparent border-[#66676B] ${
+                            className={`lg:py-4 lg:px-[25px] py-3 px-5 flex rtl:space-x-reverse space-x-2.5 items-center  hover:text-black hover:bg-primary-blue common-transition rounded-[5px] border hover:border-transparent border-[#66676B] ${
                               selectedCategory === category.id
                                 ? "bg-primary-blue text-black"
                                 : "bg-transparent text-white"
@@ -71,7 +71,7 @@ function BestSellingProduct({ datas }) {
                   </div>
                 )}
             </div>
-            <div className="w-full mt-[30px] lg:flex lg:space-x-[30px] items-stretch">
+            <div className="w-full mt-[30px] lg:flex lg:rtl:space-x-reverse space-x-[30px] items-stretch">
               <div className="flex-1">
                 {products.length > 0 ? (
                   <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-6">

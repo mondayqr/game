@@ -27,7 +27,7 @@ function Index() {
             <ProductCartList cartItems={data?.items} />
           </div>
           <div className="w-full">
-            <div className="w-full sm:flex sm:space-x-5  lg:justify-end"></div>
+            <div className="w-full sm:flex sm:rtl:space-x-reverse space-x-5  lg:justify-end"></div>
           </div>
           <div className="w-full mt-[30px] flex sm:justify-end">
             <div className="sm:w-[370px] w-full border border-[#23262B] px-[30px] py-[26px] rounded-[5px]">
@@ -49,13 +49,13 @@ function Index() {
                   </p>
                 </div>
               </div>
-              <a href="/checkout">
+              <Link href="/checkout">
                 <div className="w-full h-[54px] bg-[#FFB321] text-primary-black flex justify-center items-center rounded-[5px]">
                   <span className="text-lg font-semibold">
                     <StringLang string="Proceed to Checkout" />
                   </span>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

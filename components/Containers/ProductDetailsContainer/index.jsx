@@ -104,7 +104,7 @@ function OrderCom({ closeHandler, product }) {
       <div className="grid grid-cols-2 gap-8 mb-5">
         <div className="col-span-full w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               User ID(only game)
             </label>
             <input
@@ -119,7 +119,7 @@ function OrderCom({ closeHandler, product }) {
         </div>
         <div className="col-span-full w-full">
           <div className="input-field relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center">
               Message to Seller
             </label>
             <textarea
@@ -160,14 +160,14 @@ function OrderCom({ closeHandler, product }) {
         </div>
         <div className="pricing-action">
           <div className="flex justify-end">
-            <div className="flex space-x-3 items-center">
+            <div className="flex rtl:space-x-reverse space-x-3 items-center">
               <p className="text-[30px] font-bold text-[#EB5757] leading-9 text-end">
                 {currency(product?.option?.price)}
               </p>
             </div>
           </div>
 
-          <div className="flex space-x-2.5 items-center justify-end">
+          <div className="flex rtl:space-x-reverse space-x-2.5 items-center justify-end">
             <button
               disabled={isLoading}
               onClick={() => addCart({ product: data, closeHandler })}
@@ -419,7 +419,7 @@ function Reviews({ pid }) {
         <h2 className="text-2xl font-bold text-white mb-2">
           <StringLang string="Review" />
         </h2>
-        <div className="flex space-x-1 items-center mb-5">
+        <div className="flex rtl:space-x-reverse space-x-1 items-center mb-5">
           <span>
             <svg
               width="22"
@@ -456,7 +456,7 @@ function Reviews({ pid }) {
                   className="item w-full rounded-[5px] border border-primary-border-secondary flex flex-col justify-between"
                 >
                   <div className="p-5 flex h-[130px] flex-col space-y-3">
-                    <div className="flex space-x-2 items-center mb-3">
+                    <div className="flex rtl:space-x-reverse space-x-2 items-center mb-3">
                       {Array.from(Array(parseInt(review.rating)), () => (
                         <span
                           key={Math.random()}
@@ -503,7 +503,7 @@ function Reviews({ pid }) {
                       {review.review}
                     </p>
                   </div>
-                  <div className="px-5 py-3 border-t border-primary-border-secondary flex space-x-2.5">
+                  <div className="px-5 py-3 border-t border-primary-border-secondary flex rtl:space-x-reverse space-x-2.5">
                     <div className="w-[38px] h-[38px] rounded-full overflow-hidden">
                       <img
                         src={process.env.BASE_URL + review?.user.image}
@@ -512,7 +512,7 @@ function Reviews({ pid }) {
                       />
                     </div>
                     <div>
-                      <p className="text-base font-semibold text-white">
+                      <p className="text-base font-semibold text-white notranslate">
                         {review?.user.name}
                       </p>
                       <p className="text-sm">
@@ -579,7 +579,7 @@ function Index({ datas }) {
                   />
                 </div>
                 <div className="w-full mb-5">
-                  <h1 className="text-2xl font-bold text-white mb-3">
+                  <h1 className="text-2xl font-bold text-white mb-3 notranslate">
                     {datas.product.name}
                   </h1>
                   <p className="text-base">{datas.product.short_description}</p>
@@ -615,7 +615,7 @@ function Index({ datas }) {
                                 <div className="px-1 py-[6px]">
                                   <p
                                     title={service.variant_name}
-                                    className="text-sm font-medium text-white line-clamp-1"
+                                    className="text-sm font-medium text-white line-clamp-1 notranslate"
                                   >
                                     {service.variant_name}
                                   </p>
@@ -665,7 +665,7 @@ function Index({ datas }) {
                                     })
                                   }
                                 >
-                                  <div className="lg:py-4 lg:px-[25px] py-3 px-5 flex space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
+                                  <div className="lg:py-4 lg:px-[25px] py-3 px-5 flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
                                     <span className="text-black text-base font-medium leading-5">
                                       <StringLang string="Order Now" />
                                     </span>
@@ -707,13 +707,13 @@ function Index({ datas }) {
                       </div>
                     </div>
                     <div>
-                      <h1 className="text-white text-2xl font-bold text-center mt-4">
+                      <h1 className="text-white text-2xl font-bold text-center mt-4 notranslate">
                         {datas.author.name}
                       </h1>
                       <p className="text-[#E5E7EB] text-base font-medium text-center mt-4">
                         Joined - {DateFormat(datas.author.created_at)}
                       </p>
-                      <div className="flex space-x-1.5 items-center mt-2.5 justify-center ">
+                      <div className="flex rtl:space-x-reverse space-x-1.5 items-center mt-2.5 justify-center ">
                         <div className="flex">
                           {Array.from(
                             Array(parseInt(datas.author.average_rating)),
@@ -772,7 +772,7 @@ function Index({ datas }) {
                     href={`/sellers/${datas.author.user_name}`}
                     className="w-full"
                   >
-                    <div className="w-full py-4 px-10 inline-flex space-x-2.5 items-center bg-primary-blue justify-center hover:bg-white common-transition rounded-[5px]">
+                    <div className="w-full py-4 px-10 inline-flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue justify-center hover:bg-white common-transition rounded-[5px]">
                       <span className="text-black text-base font-medium leading-5">
                         <StringLang string="View Details" />
                       </span>
@@ -786,13 +786,13 @@ function Index({ datas }) {
                     Why Chose us
                   </p>
                   <div>
-                    <div className="inline-flex items-center space-x-1 bg-primary-blue bg-opacity-10 px-3 py-2 rounded mb-5">
+                    <div className="inline-flex items-center rtl:space-x-reverse space-x-1 bg-primary-blue bg-opacity-10 px-3 py-2 rounded mb-5">
                       <img src="/assets/img/payment-success.png" alt="" />
                       <span className="text-base font-semibold text-white">
                         <StringLang string="Secure Payments" />
                       </span>
                     </div>
-                    <div className="inline-flex items-center space-x-1 bg-primary-blue bg-opacity-10 px-3 py-2 rounded">
+                    <div className="inline-flex items-center rtl:space-x-reverse space-x-1 bg-primary-blue bg-opacity-10 px-3 py-2 rounded">
                       <img src="/assets/img/hour-24.png" alt="" />
                       <span className="text-base font-semibold text-white">
                         <StringLang string="Support 24/7" />

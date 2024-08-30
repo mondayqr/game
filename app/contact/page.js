@@ -35,7 +35,7 @@ async function Page() {
       />
       <div className="w-full py-[60px]">
         <div className="theme-container  mx-auto">
-          <div className="w-full lg:flex lg:space-x-[30px] mb-10">
+          <div className="w-full lg:flex lg:rtl:space-x-reverse space-x-[30px] mb-10">
             {/*contact form*/}
             <div className="flex-1 mb-5 lg:mb-0">
               <MessageForm title={contact.title1} />
@@ -53,7 +53,7 @@ async function Page() {
                         />
                       </div>
                     </div>
-                    <div className="flex flex-col space-x-">
+                    <div className="flex flex-col rtl:space-x-reverse space-x-">
                       <p className="text-base text-white text-center">
                         {contact.title2}
                       </p>

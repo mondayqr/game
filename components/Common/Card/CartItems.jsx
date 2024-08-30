@@ -33,7 +33,7 @@ function CartItems({ cartData }) {
   return (
     <tr className="bg-black border-b border-[#23262B]">
       <td className="pl-10  py-4  w-[380px]">
-        <div className="flex space-x-6 items-center">
+        <div className="flex rtl:space-x-reverse space-x-6 items-center">
           <div className="w-[132px] h-[104px] overflow-hidden flex justify-center items-center rounded-md relative">
             <img
               src={process.env.BASE_URL + cartData?.variant_image}
@@ -43,7 +43,7 @@ function CartItems({ cartData }) {
           </div>
           <div className="flex-1 flex flex-col">
             <div className="mb-2">
-              <p className="font-medium text-[22px] text-white">
+              <p className="font-medium text-[22px] text-white notranslate">
                 {cartData?.variant_name}
               </p>
             </div>
@@ -61,21 +61,21 @@ function CartItems({ cartData }) {
         </div>
       </td>
       <td className="text-center py-4 px-2">
-        <div className="flex space-x-1 items-center justify-center">
+        <div className="flex rtl:space-x-reverse space-x-1 items-center justify-center">
           <span className="text-base text-white font-semibold">
             {currency(Number(cartData?.option_price))}
           </span>
         </div>
       </td>
       <td className="text-center py-4 px-2">
-        <div className="flex space-x-1 items-center justify-center">
+        <div className="flex rtl:space-x-reverse space-x-1 items-center justify-center">
           <span className="text-base font-semibold  text-primary-blue ">
             -{currency(cartData?.discount || 0)}
           </span>
         </div>
       </td>
       <td className="text-right py-4">
-        <div className="flex space-x-1 items-center justify-center">
+        <div className="flex rtl:space-x-reverse space-x-1 items-center justify-center">
           <span className="text-base font-semibold text-white">
             {currency(
               Number(cartData?.option_price) * qty -
@@ -85,7 +85,7 @@ function CartItems({ cartData }) {
         </div>
       </td>
       <td className="text-right py-4 w-[114px]">
-        <div className="flex space-x-1 items-center justify-center">
+        <div className="flex rtl:space-x-reverse space-x-1 items-center justify-center">
           <span
             onClick={() => {
               deleteToCart({ product: cartData });

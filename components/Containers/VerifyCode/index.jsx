@@ -12,7 +12,10 @@ function Index({ code, handleInput, handleSubmit, resendOTP, verifying }) {
         <StringLang string="No worries, we will send you reset instructions." />
       </p>
       <div className="flex justify-center mb-[30px]">
-        <div id="otp-inputs" className="flex space-x-[14px]">
+        <div
+          id="otp-inputs"
+          className="flex rtl:space-x-reverse space-x-[14px]"
+        >
           <input
             type="text"
             data-index="one"

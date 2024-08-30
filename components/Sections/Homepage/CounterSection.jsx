@@ -7,7 +7,7 @@ function CounterSection({ datas }) {
         <div className="w-full h-[204px] bg-primary-blue ">
           <div className="theme-container mx-auto h-full">
             <div className="w-ful h-full flex justify-between flex-wrap items-center gap-5">
-              <div className="flex flex-col lg:space-y-3 space-x-1">
+              <div className="flex flex-col lg:space-y-3 rtl:space-x-reverse space-x-1">
                 <span className="text-black lg:text-[65px] font-semibold tracking-wider lg:leading-[65px] text-3xl">
                   {datas.counter1_value}k
                 </span>
@@ -15,7 +15,7 @@ function CounterSection({ datas }) {
                   {datas.counter1_title}
                 </span>
               </div>
-              <div className="flex flex-col lg:space-y-3 space-x-1">
+              <div className="flex flex-col lg:space-y-3 rtl:space-x-reverse space-x-1">
                 <span className="text-black lg:text-[65px] font-semibold tracking-wider lg:leading-[65px] text-3xl">
                   {datas.counter2_value}+
                 </span>
@@ -23,7 +23,7 @@ function CounterSection({ datas }) {
                   {datas.counter2_title}
                 </span>
               </div>
-              <div className="flex flex-col lg:space-y-3 space-x-1">
+              <div className="flex flex-col lg:space-y-3 rtl:space-x-reverse space-x-1">
                 <span className="text-black lg:text-[65px] font-semibold tracking-wider lg:leading-[65px] text-3xl">
                   {datas.counter3_value}%
                 </span>
@@ -31,7 +31,7 @@ function CounterSection({ datas }) {
                   {datas.counter3_title}
                 </span>
               </div>
-              <div className="flex flex-col lg:space-y-3 space-x-1">
+              <div className="flex flex-col lg:space-y-3 rtl:space-x-reverse space-x-1">
                 <span className="text-black lg:text-[65px] font-semibold tracking-wider lg:leading-[65px] text-3xl">
                   {datas.counter4_value}k
                 </span>

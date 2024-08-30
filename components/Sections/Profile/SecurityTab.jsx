@@ -42,7 +42,7 @@ function SecurityTab() {
           <div className="grid grid-cols-2 gap-[40px] mb-[70px]">
             <div className="col-span-full w-full">
               <div className="input-field h-[50px] relative">
-                <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+                <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
                   Current Password*
                 </label>
                 <input
@@ -57,7 +57,7 @@ function SecurityTab() {
             </div>
             <div className="col-span-full w-full">
               <div className="input-field h-[50px] relative">
-                <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+                <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
                   <span className=" relative z-10">New&nbsp;Password*</span>
                 </label>
                 <input
@@ -74,7 +74,7 @@ function SecurityTab() {
             </div>
             <div className="col-span-full w-full">
               <div className="input-field h-[50px] relative">
-                <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+                <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
                   <span className=" relative z-10">Confirm&nbsp;Password*</span>
                 </label>
                 <input

@@ -10,7 +10,7 @@ function ProfileTab() {
   const { data } = useProfileQuery();
   return (
     <div className="w-full md:p-10 p-5 relative bg-black rounded-md">
-      <div className="w-full md:flex md:space-x-4  items-center mb-[30px]">
+      <div className="w-full md:flex md:rtl:space-x-reverse space-x-4  items-center mb-[30px]">
         <div className="w-[150px] h-[150px] rounded-full overflow-hidden mb-5 md:mb-0 border-2 border-white">
           <img
             src={
@@ -25,10 +25,10 @@ function ProfileTab() {
         <div className="flex-1">
           <div className="w-full ">
             <div className="border-b border-[#23262B] mb-2.5">
-              <h2 className="text-2xl font-bold leading-8 text-white">
+              <h2 className="text-2xl font-bold leading-8 text-white notranslate">
                 {data?.user?.name}
               </h2>
-              <p className="text-lg text-[#CCCCCC] mb-2.5">
+              <p className="text-lg text-[#CCCCCC] mb-2.5 notranslate">
                 {data?.user?.email}
               </p>
             </div>
@@ -52,7 +52,7 @@ function ProfileTab() {
       <button
         onClick={() => setToggleModal(!toggleModal)}
         type="button"
-        className="absolute right-[14px] top-[14px]"
+        className="absolute ltr:right-[14px] ltr:left-auto rtl:left-[14px] rtl:right-auto top-[14px]"
       >
         <div className="lg:px-5 lg:py-2.5 px-1.5 py-1 rounded-[5px] bg-primary-yellow hover:bg-white common-transition">
           <span className="text-base font-semibold text-primary-black">

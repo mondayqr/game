@@ -118,7 +118,7 @@ function EditProfile({ userInfo }) {
         </div>
         <div className="w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
               Name*
             </label>
             <input
@@ -133,7 +133,7 @@ function EditProfile({ userInfo }) {
         </div>
         <div className="w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
               Email*
             </label>
             <input
@@ -147,7 +147,7 @@ function EditProfile({ userInfo }) {
         </div>
         <div className="w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
               Address*
             </label>
             <input
@@ -162,7 +162,7 @@ function EditProfile({ userInfo }) {
         </div>
         <div className="w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
               Phone Number*
             </label>
             <input
@@ -177,7 +177,7 @@ function EditProfile({ userInfo }) {
         </div>
         <div className="col-span-full w-full">
           <div className="input-field relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px]  inline-block px-[5px]">
               About your self*
             </label>
             <textarea

@@ -55,7 +55,7 @@ function MessageForm({ title }) {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-7 mb-5">
         <div className="w-full">
           <div className="input-field relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
               Name*
             </label>
             <input
@@ -77,7 +77,7 @@ function MessageForm({ title }) {
         </div>
         <div className="w-full">
           <div className="input-field  relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
               Phone
             </label>
             <input
@@ -99,7 +99,7 @@ function MessageForm({ title }) {
         </div>
         <div className="w-full">
           <div className="input-field  relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
               Email*
             </label>
             <input
@@ -121,7 +121,7 @@ function MessageForm({ title }) {
         </div>
         <div className="w-full">
           <div className="input-field  relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
               Subject*
             </label>
             <input
@@ -143,7 +143,7 @@ function MessageForm({ title }) {
         </div>
         <div className="col-span-full w-full">
           <div className="input-field relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
               Message*
             </label>
             <textarea
@@ -165,7 +165,7 @@ function MessageForm({ title }) {
       </div>
       <button onClick={handleSubmit} type="button">
         <div className="lg:px-5 lg:py-2.5 px-4 py-2.5 rounded-[5px] bg-primary-blue hover:bg-white common-transition">
-          <div className="flex space-x-2 items-center">
+          <div className="flex rtl:space-x-reverse space-x-2 items-center">
             <span className="text-base  text-black">
               <StringLang string="Send Message" />
             </span>

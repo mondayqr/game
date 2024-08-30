@@ -24,7 +24,7 @@ function Index() {
       <div className="grid grid-cols-2 gap-[30px] mb-8">
         <div className="col-span-full w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">Email*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>

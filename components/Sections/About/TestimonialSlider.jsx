@@ -51,7 +51,7 @@ function TestimonialSlider({ datas }) {
               className="item w-full rounded-[5px] border border-primary-border bg-black flex flex-col justify-between"
             >
               <div className="p-5 flex h-[130px] flex-col space-y-3">
-                <div className="flex space-x-2 items-center mb-3">
+                <div className="flex rtl:space-x-reverse space-x-2 items-center mb-3">
                   {Array.from(Array(parseInt(item.rating)), () => (
                     <span key={Math.random()} className="text-[#FFB321]">
                       <svg
@@ -89,7 +89,7 @@ function TestimonialSlider({ datas }) {
                   {item.comment}
                 </p>
               </div>
-              <div className="px-5 py-3 border-t border-primary-border flex space-x-2.5">
+              <div className="px-5 py-3 border-t border-primary-border flex rtl:space-x-reverse space-x-2.5">
                 <div className="w-[38px] h-[38px] rounded-full overflow-hidden">
                   <img
                     src={process.env.BASE_URL + item.image}

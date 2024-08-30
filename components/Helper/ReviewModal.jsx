@@ -58,12 +58,12 @@ function ReviewModal({ close, orderId }) {
       <div className="grid grid-cols-2 gap-8 mb-5">
         <div className="col-span-full w-full">
           <div className="input-field h-[64px] relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-[#0B0E13] bg-opacity-30 inline-block  w-fit h-fit">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-[#0B0E13] bg-opacity-30 inline-block  w-fit h-fit">
               <div className="h-1/2  w-full bg-black absolute "></div>
               <span className="px-[5px] relative z-10">Rating*</span>
             </label>
             <div className="w-full h-full bg-[#0B0E13] rounded-[5px] border border-white/10 px-4 flex items-center">
-              <div className="flex space-x-2 items-center ">
+              <div className="flex rtl:space-x-reverse space-x-2 items-center ">
                 {new Array(1, 2, 3, 4, 5).map((_, index) => {
                   return (
                     <button
@@ -95,7 +95,7 @@ function ReviewModal({ close, orderId }) {
         </div>
         <div className="col-span-full w-full">
           <div className="input-field relative">
-            <label className="text-sm text-white absolute left-3 -top-[9px] bg-[#0B0E13] bg-opacity-30 inline-block  w-fit h-fit">
+            <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-[#0B0E13] bg-opacity-30 inline-block  w-fit h-fit">
               <div className="h-1/2  w-full bg-black absolute "></div>
               <span className="px-[5px] relative z-10">Review*</span>
             </label>

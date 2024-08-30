@@ -67,7 +67,7 @@ export default async function RootLayout({ children }) {
         footer: null,
       };
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <head>
         <link
           rel="icon"
@@ -102,7 +102,12 @@ export default async function RootLayout({ children }) {
                 settings={setting}
                 languages={languages}
               />
-              <AppHeader settings={setting} categories={categories} />
+              <AppHeader
+                languages={languages}
+                currencies={currencies}
+                settings={setting}
+                categories={categories}
+              />
             </header>
             <main>
               {children}

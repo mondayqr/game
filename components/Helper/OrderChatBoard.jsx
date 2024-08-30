@@ -84,7 +84,7 @@ function OrderChatBoard({ id, isApprove }) {
             }}
             type="button"
           >
-            <div className="py-4 px-8 flex space-x-2.5 items-center bg-primary-blue common-transition rounded-[5px]">
+            <div className="py-4 px-8 flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue common-transition rounded-[5px]">
               <span className="text-black text-base font-medium leading-5">
                 <StringLang string="Send Message" />
               </span>

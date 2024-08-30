@@ -37,7 +37,7 @@ function FaqContain({ faqs, testimonials }) {
                     <button
                       onClick={() => setSelectedFaq(Number(faq.id))}
                       type="button"
-                      className="w-full lg:px-[30px] lg:py-[28px]  p-3.5 bg-black rounded-md flex justify-between space-x-5 items-center mb-1"
+                      className="w-full lg:px-[30px] lg:py-[28px]  p-3.5 bg-black rounded-md flex justify-between rtl:space-x-reverse space-x-5 items-center mb-1"
                     >
                       <p className="text-xl font-semibold text-start text-white leading-6 line-clamp-1">
                         {faq.question}

@@ -48,7 +48,7 @@ function Index() {
       <div className="grid grid-cols-2 gap-[30px] mb-5">
         <div className="col-span-full w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm bg-black text-white bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm bg-black text-white bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  ltr:right-auto -top-[9px]  inline-block px-[5px]">
               Email*
             </label>
             <input
@@ -63,7 +63,7 @@ function Index() {
         </div>
         <div className="col-span-full w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm bg-black text-white bg-opacity-30 absolute left-3 -top-[9px]  inline-block px-[5px]">
+            <label className="text-sm bg-black text-white bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  ltr:right-auto -top-[9px]  inline-block px-[5px]">
               Password*
             </label>
             <input
@@ -78,7 +78,7 @@ function Index() {
         </div>
       </div>
       <div className="flex justify-between items-center mb-[45px]   ">
-        <div className="flex space-x-3 items-center ">
+        <div className="flex rtl:space-x-reverse space-x-3 items-center ">
           <span>
             <input
               type="checkbox"

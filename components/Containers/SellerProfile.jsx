@@ -29,7 +29,7 @@ function SellerProfile({ datas }) {
               {/*Seller Profile Info*/}
               <div className="w-full bg-black px-[29px] py-10 rounded-lg mb-[30px]">
                 <div className="w-full flex md:flex-row flex-col space-y-5 md:space-y-0 md:justify-between md:items-center items-start mb-[30px]">
-                  <div className="md:flex md:space-x-4">
+                  <div className="md:flex md:rtl:space-x-reverse space-x-4">
                     <div className="w-[100px] h-[100px] rounded-full overflow-hidden mb-3 md:mb-0">
                       <img
                         src={process.env.BASE_URL + author.image}
@@ -38,8 +38,8 @@ function SellerProfile({ datas }) {
                       />
                     </div>
                     <div>
-                      <div className="flex space-x-2 mt-3">
-                        <h1 className="text-white text-xl font-bold">
+                      <div className="flex rtl:space-x-reverse space-x-2 mt-3">
+                        <h1 className="text-white text-xl font-bold notranslate">
                           {author.name}
                         </h1>
                         <span>
@@ -75,7 +75,7 @@ function SellerProfile({ datas }) {
                         </span>
                       </div>
 
-                      <div className="flex space-x-1.5 items-center mt-2.5">
+                      <div className="flex rtl:space-x-reverse space-x-1.5 items-center mt-2.5">
                         <span>
                           <svg
                             width="23"
@@ -99,7 +99,7 @@ function SellerProfile({ datas }) {
                 </div>
                 <div className="grid sm:grid-cols-3 grid-cols-1 gap-5 mb-[30px]">
                   <div className="w-full h-[120px] bg-[#0B0E13] flex items-center px-5 rounded-md">
-                    <div className="flex space-x-[14px]">
+                    <div className="flex rtl:space-x-reverse space-x-[14px]">
                       <div className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-primary-blue bg-opacity-10">
                         <span>
                           <img src="/assets/img/seller-dash-icon.png" alt="" />
@@ -116,7 +116,7 @@ function SellerProfile({ datas }) {
                     </div>
                   </div>
                   <div className="w-full h-[120px] bg-[#0B0E13] flex items-center px-5 rounded-md">
-                    <div className="flex space-x-[14px]">
+                    <div className="flex rtl:space-x-reverse space-x-[14px]">
                       <div className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-primary-blue bg-opacity-10">
                         <span>
                           <img
@@ -136,7 +136,7 @@ function SellerProfile({ datas }) {
                     </div>
                   </div>
                   <div className="w-full h-[120px] bg-[#0B0E13] flex items-center px-5 rounded-md">
-                    <div className="flex space-x-[14px]">
+                    <div className="flex rtl:space-x-reverse space-x-[14px]">
                       <div className="w-[48px] h-[48px] rounded-full flex justify-center items-center bg-primary-blue bg-opacity-10">
                         <span>
                           <img

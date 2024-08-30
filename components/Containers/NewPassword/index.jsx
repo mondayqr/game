@@ -49,7 +49,7 @@ function Index() {
         <div className="grid grid-cols-2 gap-[30px] mb-5">
           <div className="col-span-full w-full">
             <div className="input-field h-[50px] relative">
-              <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30  inline-block px-[5px]">
+              <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30  inline-block px-[5px]">
                 New Password*
               </label>
               <input
@@ -64,7 +64,7 @@ function Index() {
           </div>
           <div className="col-span-full w-full">
             <div className="input-field h-[50px] relative">
-              <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30  inline-block px-[5px]">
+              <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30  inline-block px-[5px]">
                 Confirm Password*
               </label>
               <input

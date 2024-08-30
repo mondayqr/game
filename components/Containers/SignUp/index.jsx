@@ -59,7 +59,7 @@ function Index() {
   return (
     <div className="w-full bg-black rounded-[5px] md:px-[60px] md:py-10 p-5">
       <div className="w-full flex justify-center mb-5">
-        <div className="flex space-x-2.5 items-center "></div>
+        <div className="flex rtl:space-x-reverse space-x-2.5 items-center "></div>
       </div>
       <p className="text-[24px] font-semibold text-white leading-8 mb-8 text-center">
         <StringLang string="Create User Account" />
@@ -67,7 +67,7 @@ function Index() {
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-[30px] mb-5">
         <div className="w-full">
           <div className="input-field h-[50px] relative ">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">First&nbsp;Name*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>
@@ -92,7 +92,7 @@ function Index() {
         </div>
         <div className="w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">Last&nbsp;Name*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>
@@ -118,7 +118,7 @@ function Index() {
 
         <div className="col-span-full w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">Email*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>
@@ -143,7 +143,7 @@ function Index() {
         </div>
         <div className=" w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">Password*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>
@@ -168,7 +168,7 @@ function Index() {
         </div>
         <div className=" w-full">
           <div className="input-field h-[50px] relative">
-            <label className="text-sm text-white bg-black bg-opacity-30 absolute left-3 w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
+            <label className="text-sm text-white bg-black bg-opacity-30 absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  w-fit -top-[9px]  flex px-[5px] h-fit items-center justify-center ">
               <span className=" relative z-10">Confirm&nbsp;Password*</span>
               <div className="w-full h-0.5 bg-white relative z-0"></div>
             </label>
@@ -195,7 +195,7 @@ function Index() {
         </div>
       </div>
       <div className=" mb-[45px]">
-        <div className="flex space-x-3 items-center">
+        <div className="flex rtl:space-x-reverse space-x-3 items-center">
           <span>
             <input
               type="checkbox"

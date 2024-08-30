@@ -41,7 +41,7 @@ function Index() {
   return (
     <div className="w-full py-[60px]">
       <div className="theme-container mx-auto">
-        <div className="w-full lg:flex lg:space-x-[30px]">
+        <div className="w-full lg:flex lg:rtl:space-x-reverse space-x-[30px]">
           <div className="flex-1 mb-6 lg:mb-0">
             <div className="w-full px-[30px] py-10 border-primary-border-secondary bg-black mb-[30px] rounded-[5px]">
               <p className="text-xl font-bold text-white leading-8 mb-5">
@@ -272,7 +272,7 @@ function Index() {
                 {data?.items?.map((item) => (
                   <div
                     key={item.id}
-                    className="flex space-x-6 items-center pb-5 border-b border-primary-border-secondary/20"
+                    className="flex rtl:space-x-reverse space-x-6 items-center pb-5 border-b border-primary-border-secondary/20"
                   >
                     <div className="w-[116px] h-[92px] overflow-hidden flex rounded-md justify-center items-center relative">
                       <img
@@ -284,7 +284,7 @@ function Index() {
                     <div className="flex-1 flex flex-col">
                       <div className="mb-1.5">
                         <a href="#">
-                          <p className="font-medium text-[20px] text-white  cursor-pointer line-clamp-1">
+                          <p className="font-medium text-[20px] text-white  cursor-pointer line-clamp-1 notranslate">
                             {item.variant_name}
                           </p>
                         </a>
@@ -306,7 +306,7 @@ function Index() {
                       <p className="text-lg font-medium text-white">
                         <StringLang string="Subtotal" />
                       </p>
-                      <p className="text-lg font-medium text-qred">
+                      <p className="text-lg font-medium text-qred notranslate">
                         {" "}
                         {currency(
                           data?.items?.reduce((total, item) => {
@@ -323,7 +323,7 @@ function Index() {
                       <p className="text-lg font-medium text-white">
                         <StringLang string="Discount" />
                       </p>
-                      <p className="text-lg font-medium text-primary-blue">
+                      <p className="text-lg font-medium text-primary-blue notranslate">
                         (-){" "}
                         {currency(
                           data?.items?.reduce((total, item) => {

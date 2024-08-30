@@ -7,8 +7,12 @@ import { useLazyLogoutQuery } from "@/store/features/auth/apiSlice";
 import { useLazyGetCartQuery } from "@/store/features/cart/apiSlice";
 import { useSelector } from "react-redux";
 import StringLang from "@/utilities/StringLang";
+import DropDown from "../Helper/DropDown";
+import { useDispatch } from "react-redux";
+import { changeCurrency } from "@/store/features/setup/setupSlice";
+import { getCookie, hasCookie, setCookie } from "cookies-next";
 
-function AppHeader({ settings, categories }) {
+function AppHeader({ settings, categories, languages, currencies }) {
   const authProfile = useSelector((state) => state.auth.user);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -55,7 +59,72 @@ function AppHeader({ settings, categories }) {
       getCartData();
     }
   }, [auth]);
+  // currency
+  const dispatch = useDispatch();
+  const changeCurrencyHandler = (value) => {
+    dispatch(changeCurrency(value));
+  };
+  // translate
+  const [selectedLanguage, setLanguage] = useState(
+    languages && languages.length > 0 ? languages[0] : null
+  );
+  useEffect(() => {
+    let addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
 
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "auto",
+        autoDisplay: false,
+      },
+      "google_translate_element"
+    );
+  };
+
+  useEffect(() => {
+    if (languages && languages.length > 0) {
+      if (hasCookie("googtrans")) {
+        const getCode = getCookie("googtrans").replace("/auto/", "");
+        const findItem = languages.find((item) => item.lang_code === getCode);
+        setLanguage(findItem);
+        if (getCode === "ar" || getCode === "he") {
+          document.body.setAttribute("dir", "rtl");
+        } else {
+          document.body.setAttribute("dir", "ltr");
+        }
+      } else {
+        setCookie("googtrans", decodeURI(`/auto/${languages[0].lang_code}`));
+        setLanguage(languages[0]);
+        if (
+          languages[0].lang_code === "ar" ||
+          languages[0].lang_code === "he"
+        ) {
+          document.body.setAttribute("dir", "rtl");
+        } else {
+          document.body.setAttribute("dir", "ltr");
+        }
+      }
+    }
+  }, [languages]);
+
+  const langChange = (value) => {
+    if (hasCookie("googtrans")) {
+      setCookie("googtrans", decodeURI(`/auto/${value.lang_code}`));
+      setLanguage(value);
+      window.location.reload(true);
+    } else {
+      setCookie("googtrans", `/auto/${value.lang_code}`);
+      setLanguage(value);
+      window.location.reload(true);
+    }
+  };
   return (
     <>
       <div className="w-full bg-black lg:block hidden">
@@ -77,11 +146,11 @@ function AppHeader({ settings, categories }) {
                     value={searchKey}
                     onChange={(e) => setSearchkey(e.target.value)}
                     placeholder="Search your products..."
-                    className="h-[52px] rounded pl-[22px] pr-[100px] bg-[#0B0E12] border border-[#23262B] focus:outline-0 text-white  w-full placeholder:text-sm"
+                    className="h-[52px] rounded ltr:pl-[22px] ltr:pr-[100px] rtl:pr-[22px] rtl:pl-[100px]  bg-[#0B0E12] border border-[#23262B] focus:outline-0 text-white  w-full placeholder:text-sm"
                     type="text"
                   />
                   <Link href={`/products?search=${searchKey}`}>
-                    <div className="w-[90px] h-[42px] rounded flex justify-center items-center bg-primary-yellow hover:bg-white common-transition absolute right-2 top-1.5">
+                    <div className="w-[90px] h-[42px] rounded flex justify-center items-center bg-primary-yellow hover:bg-white common-transition absolute  top-1.5 right-2 rtl:right-auto rtl:left-2">
                       <span className="text-sm font-semibold text-primary-black">
                         <StringLang string="Search" />
                       </span>
@@ -89,7 +158,7 @@ function AppHeader({ settings, categories }) {
                   </Link>
                 </div>
               </div>
-              <div className="flex space-x-5 items-center">
+              <div className="flex rtl:space-x-reverse space-x-5 items-center">
                 <div>
                   <Link href="/auth/profile/favorites">
                     <span>
@@ -210,7 +279,7 @@ function AppHeader({ settings, categories }) {
                   type="button"
                   className="flex justify-between py-3 px-[18px] h-fit bg-[#23262B]  w-full items-center rounded-md  "
                 >
-                  <div className="flex space-x-3 items-center">
+                  <div className="flex rtl:space-x-reverse space-x-3 items-center">
                     <span>
                       <svg
                         width="14"
@@ -272,7 +341,7 @@ function AppHeader({ settings, categories }) {
                           >
                             <Link href={`/products?category=${item.slug}`}>
                               <div className=" flex justify-between items-center px-5 h-10 cursor-pointer  hover:bg-[#0b0e12] text-white">
-                                <div className="flex items-center space-x-6">
+                                <div className="flex items-center rtl:space-x-reverse space-x-6">
                                   <span className="icon">
                                     <img
                                       src={process.env.BASE_URL + item.icon}
@@ -290,7 +359,7 @@ function AppHeader({ settings, categories }) {
                                       viewBox="0 0 6 9"
                                       fill="none"
                                       xmlns="http://www.w3.org/2000/svg"
-                                      className="fill-current"
+                                      className="fill-current rtl:rotate-180"
                                     >
                                       <rect
                                         x="1.49805"
@@ -325,7 +394,7 @@ function AppHeader({ settings, categories }) {
                 )}
               </div>
               <nav>
-                <ul className="flex space-x-[50px] items-center">
+                <ul className="flex rtl:space-x-reverse space-x-[50px] items-center">
                   <li>
                     <Link
                       href="/products"
@@ -379,7 +448,7 @@ function AppHeader({ settings, categories }) {
                 <img src={process.env.BASE_URL + settings.logo} alt="" />
               </Link>
             </div>
-            <div className="flex space-x-5 items-center">
+            <div className="flex rtl:space-x-reverse space-x-5 items-center">
               <div>
                 <Link href="/auth/profile/favorites">
                   <span>
@@ -477,7 +546,7 @@ function AppHeader({ settings, categories }) {
               </div>
             </div>
           </div>
-          <div className="w-full flex space-x-5 items-center">
+          <div className="w-full flex rtl:space-x-reverse space-x-5 items-center">
             <div className="w-[44px] h-[44px] flex justify-center items-center rounded-lg bg-[#0B0E12] border border-[#23262B]">
               <div onClick={() => setOpen(true)}>
                 <svg
@@ -501,11 +570,11 @@ function AppHeader({ settings, categories }) {
                 value={searchKey}
                 onChange={(e) => setSearchkey(e.target.value)}
                 placeholder="Search your products..."
-                className="h-[44px] rounded pl-[22px] pr-[100px] bg-[#0B0E12] border border-[#23262B] focus:outline-0 text-white w-full placeholder:text-sm"
+                className="h-[44px] rounded ltr:pl-[22px] ltr:pr-[100px] rtl:pr-[22px] rtl:pl-[100px] bg-[#0B0E12] border border-[#23262B] focus:outline-0 text-white w-full placeholder:text-sm"
                 type="text"
               />
               <Link href={`/products?search=${searchKey}`}>
-                <div className="w-[90px] h-[32px] rounded flex justify-center items-center bg-primary-yellow hover:bg-white common-transition absolute right-2 top-1.5">
+                <div className="w-[90px] h-[32px] rounded flex justify-center items-center bg-primary-yellow hover:bg-white common-transition absolute ltr:right-2 ltr:left-auto rtl:left-2 rtl:right-auto top-1.5">
                   <span className="text-sm font-semibold text-primary-black">
                     <StringLang string="Search" />
                   </span>
@@ -588,7 +657,7 @@ function AppHeader({ settings, categories }) {
               </Link>
             </div>
           </div>
-          <div className="w-full mt-5 px-5 flex items-center space-x-3">
+          <div className="w-full mt-5 px-5 flex items-center rtl:space-x-reverse space-x-3">
             <span
               onClick={() => setTab("category")}
               className={`text-base font-semibold  ${
@@ -615,7 +684,7 @@ function AppHeader({ settings, categories }) {
                     <li key={i} className="category-item">
                       <Link href={`/products?category=${item.slug}`}>
                         <div className=" flex justify-between items-center px-5 h-12   transition-all duration-300 ease-in-out cursor-pointer">
-                          <div className="flex items-center space-x-6">
+                          <div className="flex items-center rtl:space-x-reverse space-x-6">
                             <span>
                               <img
                                 src={process.env.BASE_URL + item.icon}
@@ -674,7 +743,7 @@ function AppHeader({ settings, categories }) {
                 <li className="category-item">
                   <Link href="/products">
                     <div className=" flex justify-between items-center px-5 h-12  transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
+                      <div className="flex items-center rtl:space-x-reverse space-x-6">
                         <span className="text-sm font-400 capitalize ">
                           <StringLang string="Shops" />
                         </span>
@@ -713,7 +782,7 @@ function AppHeader({ settings, categories }) {
                 <li className="category-item">
                   <Link href="/about">
                     <div className="flex justify-between items-center px-5 h-12  transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
+                      <div className="flex items-center rtl:space-x-reverse space-x-6">
                         <span className="text-sm font-400 capitalize ">
                           <StringLang string="about" />
                         </span>
@@ -752,7 +821,7 @@ function AppHeader({ settings, categories }) {
                 <li className="category-item">
                   <Link href="/contact">
                     <div className="flex justify-between items-center px-5 h-12  transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
+                      <div className="flex items-center rtl:space-x-reverse space-x-6">
                         <span className="text-sm font-400 capitalize ">
                           <StringLang string="contact" />
                         </span>
@@ -791,7 +860,7 @@ function AppHeader({ settings, categories }) {
                 <li className="category-item">
                   <Link href="/blogs">
                     <div className="flex justify-between items-center px-5 h-12  transition-all duration-300 ease-in-out cursor-pointer">
-                      <div className="flex items-center space-x-6">
+                      <div className="flex items-center rtl:space-x-reverse space-x-6">
                         <span className="text-sm font-400 capitalize ">
                           <StringLang string="blogs" />
                         </span>
@@ -830,6 +899,111 @@ function AppHeader({ settings, categories }) {
               </ul>
             </div>
           )}
+          <div className="flex space-x-7 rtl:space-x-reverse px-5 mt-5 mb-4">
+            <div className="rtl:space-x-reverse space-x-9 items-center flex notranslate ">
+              <DropDown
+                width={150}
+                action={changeCurrencyHandler}
+                datas={
+                  currencies && currencies.length > 0
+                    ? currencies
+                        .map((currency) => ({
+                          ...currency,
+                          name: currency.currency_name,
+                        }))
+                        .sort(
+                          (aDefault, bDefault) => aDefault !== bDefault && 1
+                        )
+                    : []
+                }
+              >
+                {({ item }) => (
+                  <div className="flex rtl:space-x-reverse space-x-[6px] items-center">
+                    <span className="text-base text-white font-medium">
+                      {item.name}
+                    </span>
+                    <span>
+                      <svg
+                        width="9"
+                        height="6"
+                        viewBox="0 0 9 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="9.00391"
+                          y="1"
+                          width="6.36242"
+                          height="1.41387"
+                          transform="rotate(135 9.00391 1)"
+                          fill="white"
+                        />
+                        <rect
+                          x="4.5"
+                          y="5.5"
+                          width="6.36242"
+                          height="1.41387"
+                          transform="rotate(-135 4.5 5.5)"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                )}
+              </DropDown>
+            </div>
+            <div className="rtl:space-x-reverse space-x-9 items-center flex notranslate">
+              <DropDown
+                width={150}
+                action={langChange}
+                datas={
+                  languages && languages.length > 0
+                    ? languages.map((item) => ({
+                        ...item,
+                        name: item.lang_name,
+                      }))
+                    : []
+                }
+                position="right"
+              >
+                {({ item }) => (
+                  <div className="flex rtl:space-x-reverse space-x-[6px] items-center">
+                    <span className="text-base text-white font-medium">
+                      {selectedLanguage
+                        ? selectedLanguage.lang_name
+                        : item.name}
+                    </span>
+                    <span>
+                      <svg
+                        width="9"
+                        height="6"
+                        viewBox="0 0 9 6"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="9.00391"
+                          y="1"
+                          width="6.36242"
+                          height="1.41387"
+                          transform="rotate(135 9.00391 1)"
+                          fill="white"
+                        />
+                        <rect
+                          x="4.5"
+                          y="5.5"
+                          width="6.36242"
+                          height="1.41387"
+                          transform="rotate(-135 4.5 5.5)"
+                          fill="white"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                )}
+              </DropDown>
+            </div>
+          </div>
         </div>
       </div>
     </>

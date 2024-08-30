@@ -43,7 +43,7 @@ function Consent({ data }) {
           className="fixed md:w-[420px] w-full h-[260px] rounded bg-[#21242b] shadow md:left-8 md:bottom-8 left-0 bottom-0 p-7"
           style={{
             boxShadow: "rgb(0 0 0 / 14%) 0px 15px 50px 0px",
-            zIndex: "9999999999",
+            zIndex: "999999999999999999",
           }}
         >
           <div className="w-full h-full flex flex-col justify-between relative">
@@ -57,7 +57,7 @@ function Consent({ data }) {
                 </span>
               </Link>
             </div>
-            <div className="flex space-x-4 rtl:space-x-reverse items-center h-[42px]">
+            <div className="flex rtl:space-x-reverse space-x-4  items-center h-[42px]">
               <button
                 onClick={() => {
                   acceptCookie();

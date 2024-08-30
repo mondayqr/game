@@ -197,7 +197,7 @@ function EmptyCart() {
       </p>
       <div className="w-full flex justify-center">
         <button onClick={() => router.back()} type="button">
-          <div className="py-4 px-8 flex space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
+          <div className="py-4 px-8 flex rtl:space-x-reverse space-x-2.5 items-center bg-primary-blue hover:bg-white common-transition rounded-[5px]">
             <span className="text-black text-base font-medium leading-5">
               <StringLang string="Go Back!" />
             </span>

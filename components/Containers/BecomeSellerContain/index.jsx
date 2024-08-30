@@ -83,7 +83,7 @@ function Index() {
                   <div className="grid grid-cols-2 gap-[30px] mb-5">
                     <div className="col-span-full w-full">
                       <div className="input-field h-[50px] relative">
-                        <label className="text-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+                        <label className="text-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
                           Name*
                         </label>
                         <input
@@ -105,7 +105,7 @@ function Index() {
                     </div>
                     <div className=" w-full">
                       <div className="input-field h-[50px] relative">
-                        <label className="ext-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+                        <label className="ext-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
                           Email*
                         </label>
                         <input
@@ -127,7 +127,7 @@ function Index() {
                     </div>
                     <div className=" w-full">
                       <div className="input-field h-[50px] relative">
-                        <label className="ext-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+                        <label className="ext-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
                           Phone*
                         </label>
                         <input
@@ -149,7 +149,7 @@ function Index() {
                     </div>
                     <div className="col-span-full w-full">
                       <div className="input-field h-[50px] relative">
-                        <label className="ext-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+                        <label className="ext-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
                           Address*
                         </label>
                         <input
@@ -185,7 +185,7 @@ function Index() {
                   <div className="grid grid-cols-2 gap-[20px] mb-5">
                     <div className="w-full">
                       <div className="input-field h-[50px] relative">
-                        <label className="ext-sm text-white absolute left-3 -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
+                        <label className="ext-sm text-white absolute rtl:left-auto rtl:right-3 ltr:left-3 ltr:right-auto  -top-[9px] bg-black bg-opacity-30 inline-block px-[5px]">
                           Select Documents*
                         </label>
                         <select
@@ -222,7 +222,7 @@ function Index() {
                               accept="image/*"
                               name="document"
                               onChange={(e) => fileHandler(e)}
-                              className="block w-full rounded-[5px] border border-[#23262B] bg-[#0B0E12] text-sm text-[#23262B] file:mr-4 file:py-3 file:px-8 file:border-0 file:text-base file:font-medium file:bg-[#23262B] file:text-white "
+                              className="block w-full rounded-[5px] border border-[#23262B] bg-[#0B0E12] text-sm text-[#23262B] file:mr-4 rtl:file:ml-4 rtl:file:mr-0  file:py-3 file:px-8 file:border-0 file:text-base file:font-medium file:bg-[#23262B] file:text-white "
                               type="file"
                             />
                           </div>
@@ -243,7 +243,7 @@ function Index() {
                               accept="image/*"
                               name="logo"
                               onChange={(e) => fileHandler(e)}
-                              className="block w-full rounded-[5px] border border-[#23262B] bg-[#0B0E12] text-sm text-[#23262B] file:mr-4 file:py-3 file:px-8 file:border-0 file:text-base file:font-medium file:bg-[#23262B] file:text-white "
+                              className="block w-full rounded-[5px] border border-[#23262B] bg-[#0B0E12] text-sm text-[#23262B] file:mr-4 rtl:file:ml-4 rtl:file:mr-0  rtl:file:ml-4 rtl:file:mr-0 file:py-3 file:px-8 file:border-0 file:text-base file:font-medium file:bg-[#23262B] file:text-white "
                               type="file"
                             />
                           </div>
@@ -261,7 +261,7 @@ function Index() {
                 </div>
               </div>
               <div className=" mb-[45px]">
-                <div className="flex space-x-3 items-center">
+                <div className="flex rtl:space-x-reverse space-x-3 items-center">
                   <span>
                     <input
                       type="checkbox"
@@ -283,7 +283,7 @@ function Index() {
                 type="button"
                 className="w-full h-[62px] rounded bg-primary-blue text-black flex justify-center items-center text-[18px] font-semibold"
               >
-                <div className="flex space-x-2 items-center">
+                <div className="flex rtl:space-x-reverse space-x-2 items-center">
                   <span className="text-base  text-black">
                     {" "}
                     <StringLang string="Request for Seller" />

@@ -5,9 +5,17 @@ const useCurrency = () => {
   return (price) => {
     const mainPrice = Number(price) * Number(currency.currency_rate);
     if (currency.currency_position === "left") {
-      return `${currency.currency_icon}${mainPrice}`;
+      return (
+        <span className="notranslate">
+          {currency.currency_icon + mainPrice}
+        </span>
+      );
     } else {
-      return `${mainPrice}${currency.currency_icon}`;
+      return (
+        <span className="notranslate">
+          {mainPrice + currency.currency_icon}
+        </span>
+      );
     }
   };
 };

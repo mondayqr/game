@@ -31,7 +31,7 @@ function Comments({ blogId }) {
               {data?.comments?.data?.map((item, index) => (
                 <div
                   key={item?.id || item?.name + index}
-                  className="sm:flex sm:space-x-10 py-5 border-b border-primary-border last:border-none"
+                  className="sm:flex sm:rtl:space-x-reverse space-x-10 py-5 border-b border-primary-border last:border-none"
                 >
                   <div className="w-[120px] h-[120px] rounded-full overflow-hidden mb-5 sm:mb-0">
                     <img
